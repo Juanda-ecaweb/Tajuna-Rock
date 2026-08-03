@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XVIII Tajuña Rock 2026 | Contacto</title>
+    <meta
+      name="description"
+      content="Canales de contacto publico del XVIII Tajuña Rock 2026."
+    />
+    <meta property="og:title" content="XVIII Tajuña Rock 2026 | Contacto" />
+    <meta
+      property="og:description"
+      content="información de contacto y comunicacion oficial del festival."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script defer src="js/datos.js"></script>
+    <script defer src="js/principal.js"></script>
+    <script type="application/ld+json" data-event-jsonld></script>
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+    <div data-site-header></div>
+
+    <main id="contenido" class="page">
+      <section class="hero" aria-labelledby="contacto-title">
+        <h1 id="contacto-title">Contacto</h1>
+        <p>Canal publico general para consultas.</p>
+        <div class="hero-mark" data-media-slot>
+          <img data-media-logo-mascot alt="" />
+        </div>
+      </section>
+
+      <section class="section grid" aria-label="Datos de contacto publicos">
+        <article class="card">
+          <h2>Correo publico</h2>
+          <p data-contact-email>PENDIENTE</p>
+        </article>
+        <article class="card">
+          <h2>Telefono publico</h2>
+          <p data-contact-phone>PENDIENTE</p>
+        </article>
+        <article class="card">
+          <h2>Redes sociales</h2>
+          <div data-contact-social></div>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="nota-privacidad">
+        <h2 id="nota-privacidad">Privacidad</h2>
+        <div class="info-block">
+          <p>
+            Esta web no publica datos personales ni información sensible. Solo se incluyen canales publicos
+            cuando esten confirmados por la organizacion.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="form-contacto-title">
+        <h2 id="form-contacto-title">Formulario de contacto</h2>
+        <div class="info-block">
+          <p>
+            Este formulario abre tu cliente de correo para enviar la consulta al canal oficial.
+          </p>
+        </div>
+        <form class="site-form" data-mailto-form data-form-type="contacto">
+          <input type="hidden" name="Canal" value="Contacto general" />
+          <input type="hidden" name="Asunto" value="" data-form-subject />
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="contacto-nombre">Nombre</label>
+              <input id="contacto-nombre" name="Nombre" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="contacto-email">Correo electronico</label>
+              <input id="contacto-email" name="Email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="contacto-asunto">Asunto</label>
+              <input id="contacto-asunto" name="Asunto consulta" type="text" required />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="contacto-mensaje">Mensaje</label>
+              <textarea id="contacto-mensaje" name="Mensaje" rows="6" required></textarea>
+            </div>
+          </div>
+          <label class="check-line">
+            <input type="checkbox" name="Acepto privacidad" required />
+            He leido y acepto la <a href="privacidad.html">politica de privacidad</a> de esta web.
+          </label>
+          <div class="form-actions">
+            <button class="btn" type="submit">Enviar consulta</button>
+          </div>
+          <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="section grid" aria-label="Accesos a otros formularios">
+        <article class="card">
+          <h2>Formulario de prensa</h2>
+          <p>Solicitudes de medios y acreditaciones.</p>
+          <a class="btn alt" href="prensa.html#acreditaciones-prensa">Ir a prensa</a>
+        </article>
+        <article class="card">
+          <h2>Formulario para grupos</h2>
+          <p>Bandas interesadas en futuras ediciones.</p>
+          <a class="btn alt" href="grupos.html">Ir a grupos interesados</a>
+        </article>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>
+

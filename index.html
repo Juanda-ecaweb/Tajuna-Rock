@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XVIII Tajuña Rock 2026 | Inicio</title>
+    <meta
+      name="description"
+      content="Web oficial informativa del XVIII Tajuña Rock 2026: festival gratuito en Morata de Tajuña, Madrid. información para publico, prensa, bandas y colaboradores."
+    />
+    <meta property="og:title" content="XVIII Tajuña Rock 2026" />
+    <meta
+      property="og:description"
+      content="Festival gratuito en Morata de Tajuña, Madrid. información para publico, prensa, bandas y colaboradores."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- TODO: anadir favicon cuando exista un logo publico adecuado -->
+    <script defer src="js/datos.js"></script>
+    <script defer src="js/principal.js"></script>
+    <script type="application/ld+json" data-event-jsonld></script>
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+    <div data-site-header></div>
+
+    <main id="contenido" class="page">
+      <section class="hero hero-home" aria-labelledby="titulo-principal">
+        <div class="hero-copy">
+          <p class="eyebrow">18 años de rock</p>
+          <h1 id="titulo-principal" data-festival-nombre></h1>
+          <p class="hero-lead"><span data-festival-edicion></span> | Entrada <span data-festival-entrada></span></p>
+          <div class="meta-grid" aria-label="Datos principales del festival">
+            <div class="meta-item"><strong>Fecha</strong><br /><span data-festival-fecha></span></div>
+            <div class="meta-item"><strong>Lugar</strong><br /><span data-festival-lugar></span></div>
+            <div class="meta-item"><strong>Bandas</strong><br /><span data-bandas-inline></span></div>
+          </div>
+          <div class="action-row">
+            <a class="btn" href="publico.html">Información para el público</a>
+            <a class="btn alt" href="prensa.html">Prensa</a>
+            <a class="btn alt" href="prensa.html#acreditaciones-prensa">Acreditaciones</a>
+            <a class="btn alt" href="publico.html#documentos">Documentos</a>
+          </div>
+        </div>
+        <aside class="hero-art" aria-label="Identidad visual del festival">
+          <figure class="mini-brand" data-media-slot>
+            <img data-media-main-logo alt="" />
+          </figure>
+          <figure class="mini-brand" data-media-slot>
+            <img data-media-mascot alt="" />
+          </figure>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="que-es">
+        <h2 id="que-es">Que es Tajuña Rock</h2>
+        <div class="info-block">
+          <p>
+            Tajuña Rock es un festival de rock gratuito en Morata de Tajuña (Madrid), en su XVIII edición.
+            Esta web publica centraliza información para asistentes, prensa, comerciantes y colaboradores.
+          </p>
+          <p class="tag">Sin datos internos de produccion</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="historia-breve-title">
+        <h2 id="historia-breve-title">Un festival del pueblo y para el pueblo</h2>
+        <blockquote class="history-quote" data-historia-breve></blockquote>
+      </section>
+
+      <section class="section" aria-labelledby="cartel-oficial">
+        <h2 id="cartel-oficial">Cartel oficial</h2>
+        <div data-cartel-oficial></div>
+      </section>
+
+      <section class="section" aria-labelledby="resumen-bandas">
+        <h2 id="resumen-bandas">Bandas participantes</h2>
+        <div class="grid" data-bandas-grid></div>
+      </section>
+
+      <section class="section" aria-labelledby="colaboradores">
+        <h2 id="colaboradores">Patrocinadores y colaboradores</h2>
+        <div class="pending-box">
+          PENDIENTE: no hay logos ni listado publico confirmado en el proyecto.
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="identidad-title">
+        <h2 id="identidad-title">Identidad visual</h2>
+        <div class="brand-strip">
+          <figure class="brand-card" data-media-slot>
+            <img data-media-main-logo alt="" />
+          </figure>
+          <figure class="brand-card" data-media-slot>
+            <img data-media-logo-mascot alt="" />
+          </figure>
+          <figure class="brand-card" data-media-slot>
+            <img data-media-mascot alt="" />
+          </figure>
+        </div>
+        <div class="pending-box">Si falta alguna imagen, copia los PNG en imagenes/logos/ con los nombres definidos en js/datos.js.</div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>
+

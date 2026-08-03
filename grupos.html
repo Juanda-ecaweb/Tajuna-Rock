@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XVIII Tajuña Rock 2026 | Grupos</title>
+    <meta
+      name="description"
+      content="Formulario de grupos interesados para futuras ediciones del Tajuña Rock."
+    />
+    <meta property="og:title" content="XVIII Tajuña Rock 2026 | Grupos" />
+    <meta
+      property="og:description"
+      content="Normas publicas, llegada y documentacion para grupos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script defer src="js/datos.js"></script>
+    <script defer src="js/principal.js"></script>
+    <script type="application/ld+json" data-event-jsonld></script>
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+    <div data-site-header></div>
+
+    <main id="contenido" class="page">
+      <section class="hero" aria-labelledby="grupos-title">
+        <h1 id="grupos-title">Grupos interesados</h1>
+        <p>
+          Formulario de contacto para bandas que quieran presentar su propuesta para futuras ediciones.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="form-grupos-title">
+        <h2 id="form-grupos-title">Enviar propuesta</h2>
+        <form class="site-form" data-mailto-form data-form-type="grupos">
+          <input type="hidden" name="Canal" value="Grupos interesados" />
+          <input type="hidden" name="Asunto" value="" data-form-subject />
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="grupo-nombre">Nombre de la banda</label>
+              <input id="grupo-nombre" name="Banda" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="grupo-ciudad">Ciudad / procedencia</label>
+              <input id="grupo-ciudad" name="Ciudad" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="grupo-contacto">Persona de contacto</label>
+              <input id="grupo-contacto" name="Contacto" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="grupo-email">Correo electronico</label>
+              <input id="grupo-email" name="Email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="grupo-estilo">Estilo musical</label>
+              <input id="grupo-estilo" name="Estilo" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="grupo-redes">Web o redes principales</label>
+              <input id="grupo-redes" name="Enlaces" type="url" placeholder="https://" />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="grupo-info">Presentacion de la banda</label>
+              <textarea id="grupo-info" name="Presentacion" rows="6" required></textarea>
+            </div>
+          </div>
+          <label class="check-line">
+            <input type="checkbox" name="Acepto privacidad" required />
+            Acepto la <a href="privacidad.html">politica de privacidad</a> y autorizo el uso de estos datos para contacto artistico.
+          </label>
+          <div class="form-actions">
+            <button class="btn" type="submit">Enviar propuesta</button>
+          </div>
+          <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="section">
+        <div class="pending-box">
+          Nota: este formulario no garantiza contratación. La programación se comunica solo por canales oficiales.
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>
+
