@@ -684,53 +684,398 @@
     }
   },
   patrocinadores: [
-    { nombre: "Anubis", imagen: "imagenes/patrocinadores/anubis.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Ayza", imagen: "imagenes/patrocinadores/AYZA.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Bodegas Licinia", imagen: "imagenes/patrocinadores/Bodegas Licinia.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Carrefour", imagen: "imagenes/patrocinadores/Carrefour.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Casino", imagen: "imagenes/patrocinadores/Casino.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Cerrajería de la Torre", imagen: "imagenes/patrocinadores/Cerrajeria de la Torre.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Cicloindor", imagen: "imagenes/patrocinadores/cicloindor.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Conejo", imagen: "imagenes/patrocinadores/Conejo.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "DKDa", imagen: "imagenes/patrocinadores/DKDa.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "D'Morata", imagen: "imagenes/patrocinadores/DMORATA.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Dulcería", imagen: "imagenes/patrocinadores/Dulceria.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Ecaweb", imagen: "imagenes/patrocinadores/ECAWEB.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "El Cazador", imagen: "imagenes/patrocinadores/El Cazador.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "El Cid", imagen: "imagenes/patrocinadores/El CID.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "El Duende", imagen: "imagenes/patrocinadores/El Duende.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "El Mundo de Oz", imagen: "imagenes/patrocinadores/el mundo de Oz.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "El Rincón de Dani", imagen: "imagenes/patrocinadores/El rincón de Dani.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Estanco Calle Real", imagen: "imagenes/patrocinadores/Estanco calle real.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Estanco La Plaza", imagen: "imagenes/patrocinadores/estanco la plaza.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Frutas Huertas", imagen: "imagenes/patrocinadores/Frutas Huertas.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Gamuflora", imagen: "imagenes/patrocinadores/Gamuflora.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "La Parada", imagen: "imagenes/patrocinadores/La parada.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Los Curros", imagen: "imagenes/patrocinadores/Los curros.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Loterías", imagen: "imagenes/patrocinadores/loterias.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Macarena", imagen: "imagenes/patrocinadores/macarena.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Mardé Joyeros", imagen: "imagenes/patrocinadores/Marde  Joyeros.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Maruja", imagen: "imagenes/patrocinadores/Maruja.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Materiales de Construcción", imagen: "imagenes/patrocinadores/Materiales de Constgruccion.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Morata Viajes", imagen: "imagenes/patrocinadores/Morata Viajes.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Mözárabe", imagen: "imagenes/patrocinadores/Mozarabe.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Olimpia", imagen: "imagenes/patrocinadores/Olimpia.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Oteo", imagen: "imagenes/patrocinadores/Oteo.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Pablo Andosilla", imagen: "imagenes/patrocinadores/Pablo Andosilla.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Pastelería de la Torre", imagen: "imagenes/patrocinadores/Pasteleria de la Torre.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Pastelería Real", imagen: "imagenes/patrocinadores/Pastelería Real.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Soluciones Hosteleras", imagen: "imagenes/patrocinadores/soluciones hosteleras.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Talleres Morata", imagen: "imagenes/patrocinadores/talleresmorata.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Tinaja", imagen: "imagenes/patrocinadores/Tinaja.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Travel Tours", imagen: "imagenes/patrocinadores/Travel Tours.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Tubos", imagen: "imagenes/patrocinadores/Tubos.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Vallecillos", imagen: "imagenes/patrocinadores/Vallecillos.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Vanessa", imagen: "imagenes/patrocinadores/Vanessa.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Víctor Cañas", imagen: "imagenes/patrocinadores/Victor Cañas.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Virtual Media", imagen: "imagenes/patrocinadores/Virtual Media.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Work Electric", imagen: "imagenes/patrocinadores/Work Electric.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Zeus", imagen: "imagenes/patrocinadores/zeus.png", web: null, telefono: null, direccion: null, redes: null },
-    { nombre: "Zorro", imagen: "imagenes/patrocinadores/Zorro.png", web: null, telefono: null, direccion: null, redes: null }
-  ]
+  {
+    nombre: "Anubis",
+    imagen: "imagenes/patrocinadores/anubis.png",
+    web: null,
+    telefono: "91 873 94 03",
+    direccion: "C/ Carrera del Mediodía, 55, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Ayza",
+    imagen: "imagenes/patrocinadores/AYZA.png",
+    web: "https://ayzaasesores.com/",
+    telefono: "91 876 42 17",
+    direccion: "C/ Mayor Alta, 4, 28540 Perales de Tajuña (Madrid)",
+    redes: "https://www.instagram.com/ayzaasesores/"
+  },
+  {
+    nombre: "Bodegas Licinia",
+    imagen: "imagenes/patrocinadores/Bodegas Licinia.png",
+    web: "https://www.bodegalicinia.es/",
+    telefono: "910 340 029 / 611 947 019 / 611 947 023",
+    direccion: "C/ Soledad, 11, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Carrefour",
+    imagen: "imagenes/patrocinadores/Carrefour.png",
+    web: "https://www.carrefour.es/tiendas-carrefour/supermercados/carrefour-express/morata-s.aspx",
+    telefono: "918 731 060",
+    direccion: "Plaza Mayor, 2, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Casino",
+    imagen: "imagenes/patrocinadores/Casino.png",
+    web: null,
+    telefono: "918 730 003",
+    direccion: "C/ Carmen, 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Cerrajería de la Torre",
+    imagen: "imagenes/patrocinadores/Cerrajeria de la Torre.png",
+    web: null,
+    telefono: "696 383 104 / 910 936 205",
+    direccion: "Carretera de Arganda, n.º 30, nave, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Cicloindor",
+    imagen: "imagenes/patrocinadores/cicloindor.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: "https://www.instagram.com/angelcastillo.lopez/"
+  },
+  {
+    nombre: "Conejo",
+    imagen: "imagenes/patrocinadores/Conejo.png",
+    web: "https://palmeritasdemorata.com/",
+    telefono: "918 730 251",
+    direccion: "C/ Real, 53, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "DKDa",
+    imagen: "imagenes/patrocinadores/DKDa.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: "https://www.instagram.com/proyectos_dkd/"
+  },
+  {
+    nombre: "D'Morata",
+    imagen: "imagenes/patrocinadores/DMORATA.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Dulcería",
+    imagen: "imagenes/patrocinadores/Dulceria.png",
+    web: "https://ladulceriamorata.com/",
+    telefono: "918 730 008",
+    direccion: "Av. de la Constitución, 8, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Ecaweb",
+    imagen: "imagenes/patrocinadores/ECAWEB.png",
+    web: "https://www.ecaweb.es/",
+    telefono: "918 730 831",
+    direccion: "C/ Cristo de la Sala, 46, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "El Cazador",
+    imagen: "imagenes/patrocinadores/El Cazador.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Real, 62, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "El Cid",
+    imagen: "imagenes/patrocinadores/El CID.png",
+    web: "https://www.mesonelcidmorata.com/",
+    telefono: "918 730 181 / 646 314 775",
+    direccion: "C/ Carmen, 36, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "El Duende",
+    imagen: "imagenes/patrocinadores/El Duende.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "El Mundo de Oz",
+    imagen: "imagenes/patrocinadores/el mundo de Oz.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Carmen, 8, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "El Rincón de Dani",
+    imagen: "imagenes/patrocinadores/El rincón de Dani.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Estanco Calle Real",
+    imagen: "imagenes/patrocinadores/Estanco calle real.png",
+    web: null,
+    telefono: "918 731 338",
+    direccion: "C/ Real, 45, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Estanco La Plaza",
+    imagen: "imagenes/patrocinadores/estanco la plaza.png",
+    web: null,
+    telefono: null,
+    direccion: "Plaza Mayor, 9, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Frutas Huertas",
+    imagen: "imagenes/patrocinadores/Frutas Huertas.png",
+    web: null,
+    telefono: null,
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Gamuflora",
+    imagen: "imagenes/patrocinadores/Gamuflora.png",
+    web: null,
+    telefono: "918 730 633 / 650 570 217",
+    direccion: "C/ Dos Hermanas, 11, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "La Parada",
+    imagen: "imagenes/patrocinadores/La parada.png",
+    web: null,
+    telefono: "918 730 585",
+    direccion: "Plaza Mayor, 4, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Los Curros",
+    imagen: "imagenes/patrocinadores/Los curros.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Real, 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Loterías",
+    imagen: "imagenes/patrocinadores/loterias.png",
+    web: null,
+    telefono: "918 730 225",
+    direccion: "C/ Iglesia, 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Macarena",
+    imagen: "imagenes/patrocinadores/macarena.png",
+    web: null,
+    telefono: "911 636 739",
+    direccion: "Plaza Mayor, 7, 28530 Morata de Tajuña (Madrid)",
+    redes: "https://www.facebook.com/p/Bar-Macarena-100054630391063/"
+  },
+  {
+    nombre: "Mardé Joyeros",
+    imagen: "imagenes/patrocinadores/Marde  Joyeros.png",
+    web: null,
+    telefono: "918 730 513",
+    direccion: "C/ Domingo Rodelgo, 7, 28530 Morata de Tajuña (Madrid)",
+    redes: "https://www.instagram.com/mardejoya/"
+  },
+  {
+    nombre: "Maruja",
+    imagen: "imagenes/patrocinadores/Maruja.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Carmen, 9, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Materiales de Construcción",
+    imagen: "imagenes/patrocinadores/Materiales de Constgruccion.png",
+    web: null,
+    telefono: "918 730 216",
+    direccion: "C/ Soledad, 9, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Morata Viajes",
+    imagen: "imagenes/patrocinadores/Morata Viajes.png",
+    web: "https://www.morataviajes.com/",
+    telefono: "918 730 759",
+    direccion: "C/ Carmen, 17, local 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+    {
+    nombre: "Mesón Los Arcos",
+    imagen: "imagenes/patrocinadores/Los Arcos.png",
+    web: null,
+    telefono: "659 469 659",
+    direccion: "C/ El Carmen, 16, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Mesón Luna",
+    imagen: "imagenes/patrocinadores/Luna.png",
+    web: null,
+    telefono: "637 053 288 / 647 619 891",
+    direccion: "Av. de la Constitución, 4, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Huellas",
+    imagen: "imagenes/patrocinadores/Huellas.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Cruz de Orozco, 19, 28530 Morata de Tajuña (Madrid)",
+    redes: "https://www.instagram.com/huellashuellas/"
+  },
+  {
+    nombre: "Olimpia",
+    imagen: "imagenes/patrocinadores/Olimpia.png",
+    web: null,
+    telefono: null,
+    direccion: "C/ Domingo Rodelgo, 41, 28530 Morata de Tajuña (Madrid)",
+    redes: "https://www.instagram.com/restaurante_olimpia/"
+  },
+  {
+    nombre: "Oteo",
+    imagen: "imagenes/patrocinadores/Oteo.png",
+    web: null,
+    telefono: "663 002 790",
+    direccion: "Plaza de la Iglesia, 5, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Pablo Andosilla",
+    imagen: "imagenes/patrocinadores/Pablo Andosilla.png",
+    web: null,
+    telefono: "624 654 298",
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Pastelería de la Torre",
+    imagen: "imagenes/patrocinadores/Pasteleria de la Torre.png",
+    web: "https://pasteleriadelatorre.es/",
+    telefono: "910 706 539",
+    direccion: "C/ Domingo Rodelgo, 12, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Pastelería Real",
+    imagen: "imagenes/patrocinadores/Pastelería Real.png",
+    web: null,
+    telefono: "918 730 020",
+    direccion: "C/ Real, 15, 28530 Morata de Tajuña (Madrid)",
+    redes: "https://www.facebook.com/PASTELERIA-REAL-117242441714423/"
+  },
+  {
+    nombre: "Soluciones Hosteleras",
+    imagen: "imagenes/patrocinadores/soluciones hosteleras.png",
+    web: "https://www.solucionesaplicadasalahosteleria.com/",
+    telefono: "651 851 116",
+    direccion: "Oficina: C/ Gainza, 329, 28041 Madrid. Taller: C/ Sílice, 18, 28041 Madrid",
+    redes: null
+  },
+  {
+    nombre: "Talleres Morata",
+    imagen: "imagenes/patrocinadores/talleresmorata.png",
+    web: null,
+    telefono: "637 966 216 / 918 769 921",
+    direccion: "C/ Ermita del Rosario, 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Tinaja",
+    imagen: "imagenes/patrocinadores/Tinaja.png",
+    web: null,
+    telefono: "918 730 604",
+    direccion: "Ctra. de Arganda, 10, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Travel Tours",
+    imagen: "imagenes/patrocinadores/Travel Tours.png",
+    web: "https://viajestraveltours.grupoairmet.com/",
+    telefono: "918 730 779 / 600 552 118",
+    direccion: "C/ Carmen, 22, local 2, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Tubos",
+    imagen: "imagenes/patrocinadores/Tubos.png",
+    web: null,
+    telefono: "918 731 169 / 650 341 496",
+    direccion: "C/ Carmen, 13, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Vallecillos",
+    imagen: "imagenes/patrocinadores/Vallecillos.png",
+    web: null,
+    telefono: "918 730 183 / 650 357 158 / 686 375 624",
+    direccion: "Plaza Espinardo, 1, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Vanessa",
+    imagen: "imagenes/patrocinadores/Vanessa.png",
+    web: null,
+    telefono: "918 730 074",
+    direccion: "Av. de la Constitución, 29, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Víctor Cañas",
+    imagen: "imagenes/patrocinadores/Victor Cañas.png",
+    web: null,
+    telefono: "629 457 707",
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Virtual Media",
+    imagen: "imagenes/patrocinadores/Virtual Media.png",
+    web: "https://virtualmediaproducciones.com/",
+    telefono: null,
+    direccion: "C/ Carrera del Mediodía, 22, bajo, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Work Electric",
+    imagen: "imagenes/patrocinadores/Work Electric.png",
+    web: null,
+    telefono: "648 660 808 / 685 996 448",
+    direccion: null,
+    redes: null
+  },
+  {
+    nombre: "Zeus",
+    imagen: "imagenes/patrocinadores/zeus.png",
+    web: null,
+    telefono: "918 739 075 / 687 993 804",
+    direccion: "C/ Domingo Rodelgo, 9, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  },
+  {
+    nombre: "Zorro",
+    imagen: "imagenes/patrocinadores/Zorro.png",
+    web: null,
+    telefono: "918 731 512",
+    direccion: "C/ Carmen, 2, 28530 Morata de Tajuña (Madrid)",
+    redes: null
+  }
+]
 };
 
