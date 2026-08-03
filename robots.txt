@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juanda-ecaweb.github.io/Tajuna-Rock/sitemap.xml

@@ -179,7 +179,7 @@
           : "<p><span class=\"tag\">Enlaces oficiales: PENDIENTE</span></p>";
 
         return `
-          <article class="card">
+          <article class="card band-card">
             ${imagen}
             <h3>${banda.nombre}</h3>
             <p><strong>Descripción:</strong> ${descripcion}</p>
@@ -769,7 +769,8 @@
       contacto: "Consulta web publica - Tajuña Rock",
       prensa: "Solicitud de prensa/acreditacion - Tajuña Rock",
       grupos: "Propuesta de banda - Tajuña Rock",
-      comerciantes: "Solicitud de puesto externo - Tajuña Rock"
+      comerciantes: "Solicitud de puesto externo - Tajuña Rock",
+      patrocinio: "Oferta de patrocinio o colaboracion - Tajuña Rock"
     };
 
     forms.forEach((form) => {
@@ -796,9 +797,11 @@
 
       form.removeAttribute("action");
       form.setAttribute("method", "post");
+      form.setAttribute("novalidate", "novalidate");
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        event.stopPropagation();
 
         if (submitButton) {
           submitButton.disabled = true;
@@ -811,6 +814,12 @@
 
         const payload = Object.fromEntries(new FormData(form).entries());
         const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`;
+        const body = {
+          _subject: subjectInput ? subjectInput.value : subjectByType[formType] || subjectByType.contacto,
+          _captcha: "false",
+          _template: "table",
+          ...payload
+        };
 
         fetch(endpoint, {
           method: "POST",
@@ -818,12 +827,7 @@
             "Accept": "application/json",
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-            _subject: subjectInput ? subjectInput.value : subjectByType[formType] || subjectByType.contacto,
-            _captcha: "false",
-            _template: "table",
-            ...payload
-          })
+          body: JSON.stringify(body)
         })
           .then((response) => {
             if (!response.ok) {
@@ -898,6 +902,36 @@
     setMediaImage("[data-footer-redsky]", pie ? pie.redSky : null);
   }
 
+  function renderPatrocinadores() {
+    const host = document.querySelector("[data-patrocinadores-grid]");
+    if (!host) return;
+
+    const lista = [...(data.patrocinadores || [])];
+    // Fisher-Yates shuffle para orden aleatorio en cada visita
+    for (let i = lista.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [lista[i], lista[j]] = [lista[j], lista[i]];
+    }
+
+    host.innerHTML = lista.map((p) => {
+      const img = p.imagen
+        ? `<img class="sponsor-logo" src="${p.imagen}" alt="Logo de ${p.nombre}" loading="lazy" />`
+        : `<div class="sponsor-logo sponsor-logo-missing">Sin logo</div>`;
+      const web = p.web ? `<a class="sponsor-link" href="${p.web}" target="_blank" rel="noopener">${p.web}</a>` : "";
+      const tel = p.telefono ? `<p class="sponsor-tel">${p.telefono}</p>` : "";
+      const dir = p.direccion ? `<p class="sponsor-dir">${p.direccion}</p>` : "";
+      const redes = p.redes ? `<p class="sponsor-redes">${p.redes}</p>` : "";
+      return `
+        <article class="sponsor-card">
+          <div class="sponsor-logo-wrap">${img}</div>
+          <div class="sponsor-info">
+            <h3 class="sponsor-nombre">${p.nombre}</h3>
+            ${dir}${tel}${web}${redes}
+          </div>
+        </article>`;
+    }).join("");
+  }
+
   renderHeader();
   renderFooter();
   bindCoreData();
@@ -918,5 +952,6 @@
   renderZonaTajunaRock();
   renderIdentityMedia();
   renderStructuredData();
+  renderPatrocinadores();
 })();
 

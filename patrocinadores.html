@@ -15,6 +15,10 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content="https://juanda-ecaweb.github.io/Tajuna-Rock/imagenes/cartel/tajunarock_18_edicion.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://juanda-ecaweb.github.io/Tajuna-Rock/imagenes/cartel/tajunarock_18_edicion.png" />
+    <link rel="canonical" href="https://juanda-ecaweb.github.io/Tajuna-Rock/patrocinadores.html" />
     <link rel="stylesheet" href="css/estilos.css" />
     <script defer src="js/datos.js"></script>
     <script defer src="js/principal.js"></script>
@@ -31,9 +35,7 @@
       </section>
 
       <section class="section">
-        <div class="pending-box">
-          PENDIENTE: no hay listado ni logos publicos disponibles en el proyecto.
-        </div>
+        <div class="sponsors-grid" data-patrocinadores-grid></div>
       </section>
 
       <section class="section" aria-labelledby="institucional-title">
@@ -49,6 +51,62 @@
             <img data-footer-redsky alt="" />
           </figure>
         </div>
+      </section>
+
+      <section class="section" aria-labelledby="patrocinio-form-title">
+        <h2 id="patrocinio-form-title">Quiero colaborar con el festival</h2>
+        <div class="info-block">
+          <p>Si tu empresa o comercio quiere patrocinar o colaborar con el XVIII Tajuña Rock, rellena este formulario y nos pondremos en contacto contigo.</p>
+        </div>
+        <form class="site-form" data-mailto-form data-form-type="patrocinio">
+          <input type="hidden" name="Canal" value="Oferta de patrocinio" />
+          <input type="hidden" name="Asunto" value="" data-form-subject />
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="pat-empresa">Empresa o comercio</label>
+              <input id="pat-empresa" name="Empresa" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="pat-contacto">Persona de contacto</label>
+              <input id="pat-contacto" name="Contacto" type="text" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="pat-email">Correo electrónico</label>
+              <input id="pat-email" name="Email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="pat-telefono">Teléfono</label>
+              <input id="pat-telefono" name="Telefono" type="tel" autocomplete="tel" />
+            </div>
+            <div class="form-field">
+              <label for="pat-sector">Sector o tipo de negocio</label>
+              <input id="pat-sector" name="Sector" type="text" />
+            </div>
+            <div class="form-field">
+              <label for="pat-tipo">Tipo de colaboración que propone</label>
+              <select id="pat-tipo" name="Tipo colaboracion">
+                <option value="">Selecciona una opción</option>
+                <option>Patrocinio económico</option>
+                <option>Patrocinio en especie</option>
+                <option>Colaboración como proveedor</option>
+                <option>Intercambio publicitario</option>
+                <option>Otros</option>
+              </select>
+            </div>
+            <div class="form-field form-field-full">
+              <label for="pat-propuesta">Propuesta o comentarios</label>
+              <textarea id="pat-propuesta" name="Propuesta" rows="5"></textarea>
+            </div>
+          </div>
+          <label class="check-line">
+            <input type="checkbox" name="Acepto privacidad" required />
+            Acepto la <a href="privacidad.html">política de privacidad</a> y autorizo el uso de estos datos para gestionar la solicitud.
+          </label>
+          <div class="form-actions">
+            <button class="btn" type="submit">Enviar propuesta</button>
+          </div>
+          <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+        </form>
       </section>
     </main>
 
