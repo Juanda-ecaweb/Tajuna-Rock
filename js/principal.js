@@ -764,7 +764,7 @@
       return;
     }
 
-    const targetEmail = data.contacto && data.contacto.emailPublico ? data.contacto.emailPublico : null;
+    const targetEmail = "tajunarock@gmail.com";
     const subjectByType = {
       contacto: "Consulta web publica - Tajuña Rock",
       prensa: "Solicitud de prensa/acreditacion - Tajuña Rock",
@@ -777,6 +777,7 @@
       const feedback = form.querySelector("[data-form-feedback]");
       const subjectInput = form.querySelector("[data-form-subject]");
       const submitButton = form.querySelector("button[type='submit']");
+      const defaultButtonText = submitButton ? submitButton.textContent : "Enviar";
 
       if (subjectInput) {
         subjectInput.value = subjectByType[formType] || subjectByType.contacto;
@@ -793,14 +794,60 @@
         return;
       }
 
-      form.setAttribute("action", "mailto:" + targetEmail);
+      form.removeAttribute("action");
       form.setAttribute("method", "post");
-      form.setAttribute("enctype", "text/plain");
 
-      form.addEventListener("submit", function () {
-        if (feedback) {
-          feedback.textContent = "Se abrira tu cliente de correo para completar el envio.";
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = "Enviando...";
         }
+
+        if (feedback) {
+          feedback.textContent = "Enviando el formulario desde la web...";
+        }
+
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`;
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            _subject: subjectInput ? subjectInput.value : subjectByType[formType] || subjectByType.contacto,
+            _captcha: "false",
+            _template: "table",
+            ...payload
+          })
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("No se pudo enviar");
+            }
+            if (feedback) {
+              feedback.textContent = "Formulario enviado correctamente. Gracias por contactar.";
+            }
+            form.reset();
+            if (subjectInput) {
+              subjectInput.value = subjectByType[formType] || subjectByType.contacto;
+            }
+          })
+          .catch(() => {
+            if (feedback) {
+              feedback.textContent = "No se ha podido enviar el formulario. Prueba de nuevo en unos instantes o contacta por correo electrónico.";
+            }
+          })
+          .finally(() => {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = defaultButtonText;
+            }
+          });
       });
     });
   }
