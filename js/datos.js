@@ -528,7 +528,12 @@
         ruta: "documentos/publico/normas_acceso_convivencia_tajuna_rock.pdf"
       }
     ],
-    prensa: [],
+    prensa: [
+      {
+        titulo: "Normas de acreditación y acceso para prensa",
+        ruta: "documentos/prensa/normas_acreditacion_acceso_prensa.pdf"
+      }
+    ],
     grupos: [],
     comerciantes: [
       {

@@ -103,7 +103,6 @@
             <img data-media-mascot alt="" />
           </figure>
         </div>
-        <div data-prensa-logos></div>
       </section>
 
       <section class="section" aria-labelledby="documentos-prensa">
@@ -113,10 +112,20 @@
 
       <section class="section" aria-labelledby="acreditaciones-prensa">
         <h2 id="acreditaciones-prensa">Acreditaciones</h2>
-        <div class="grid" aria-label="Tipos de acreditación">
-          <article class="card"><h3>Prensa</h3><p>PENDIENTE: condiciones y formulario oficial.</p></article>
-          <article class="card"><h3>Fotografía</h3><p>PENDIENTE: condiciones y formulario oficial.</p></article>
-          <article class="card"><h3>Vídeo / reportero</h3><p>PENDIENTE: condiciones y formulario oficial.</p></article>
+        <div class="info-block">
+          <h3>Normas básicas de acreditación</h3>
+          <ul>
+            <li>La acreditación es personal e intransferible.</li>
+            <li>El redactor no tiene acceso al foso ni a zonas restringidas.</li>
+            <li>El fotógrafo deberá presentarse cinco minutos antes del inicio de cada actuación.</li>
+            <li>El acceso al foso estará permitido durante los dos primeros temas, salvo indicación distinta de la banda o de Producción.</li>
+            <li>No se permite el uso de flash.</li>
+            <li>No se permite acceder al escenario, backstage, camerinos ni zonas técnicas.</li>
+            <li>Las entrevistas deberán estar concertadas previamente y se realizarán con acompañamiento de la organización.</li>
+            <li>Será obligatorio seguir las indicaciones de Seguridad, Producción y Organización.</li>
+            <li>La foto finish de cada banda será realizada por el fotógrafo oficial del festival y podrá solicitarse posteriormente.</li>
+            <li>El incumplimiento de las normas podrá provocar la retirada de la acreditación.</li>
+          </ul>
         </div>
         <form class="site-form section-tight" data-mailto-form data-form-type="prensa">
           <input type="hidden" name="Canal" value="Prensa y acreditaciones" />
@@ -153,8 +162,12 @@
             </div>
           </div>
           <label class="check-line">
+            <input type="checkbox" name="Acepto normas acreditacion" required />
+            He leído y acepto las <a href="documentos/prensa/normas_acreditacion_acceso_prensa.pdf" target="_blank" rel="noopener">normas de acreditación y acceso para prensa</a>.
+          </label>
+          <label class="check-line">
             <input type="checkbox" name="Acepto privacidad" required />
-            Confirmo que los datos son correctos y acepto la <a href="privacidad.html">politica de privacidad</a>.
+            Confirmo que los datos son correctos y acepto la <a href="privacidad.html">política de privacidad</a>.
           </label>
           <div class="form-actions">
             <button class="btn" type="submit">Enviar solicitud de prensa</button>
