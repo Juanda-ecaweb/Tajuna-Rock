@@ -570,7 +570,6 @@
         "Cinco bandas llegan desde universos diferentes y se encuentran en un mismo punto: la Plaza Mayor de Morata de Tajuña."
     }
   },
-  patrocinadores: [],
   zonaTajunaRock: [
     "Merchandising oficial del festival",
     "Merchandising de las bandas",
@@ -683,6 +682,7 @@
         }
       }
     }
+  },
   patrocinadores: [
     { nombre: "Anubis", imagen: "imagenes/patrocinadores/anubis.png", web: null, telefono: null, direccion: null, redes: null },
     { nombre: "Ayza", imagen: "imagenes/patrocinadores/AYZA.png", web: null, telefono: null, direccion: null, redes: null },
