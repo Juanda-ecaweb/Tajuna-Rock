@@ -118,20 +118,22 @@
               <p class="form-legal">Cuéntanos brevemente qué productos o actividad ofrecerás en el puesto.</p>
             </div>
 
-            <div class="form-field form-field-full">
+            <div class="form-field form-field-full choice-group">
               <p class="form-legal">Espacio aproximado que necesitas</p>
-              <label class="check-line">
-                <input type="radio" name="espacio_solicitado" value="2X2" checked />
-                2 x 2 m
-              </label>
-              <label class="check-line">
-                <input type="radio" name="espacio_solicitado" value="MENOR" />
-                Menor de 2 x 2 m
-              </label>
-              <label class="check-line">
-                <input type="radio" name="espacio_solicitado" value="OTRA_MEDIDA" />
-                Otra medida
-              </label>
+              <div class="choice-grid">
+                <label class="choice-option">
+                  <input type="radio" name="espacio_solicitado" value="2X2" checked />
+                  <span>2 x 2 m</span>
+                </label>
+                <label class="choice-option">
+                  <input type="radio" name="espacio_solicitado" value="MENOR" />
+                  <span>3 x 3 m</span>
+                </label>
+                <label class="choice-option">
+                  <input type="radio" name="espacio_solicitado" value="OTRA_MEDIDA" />
+                  <span>Otra medida</span>
+                </label>
+              </div>
             </div>
 
             <div class="form-field form-field-full is-hidden" id="comerciantes-medida-menor" hidden>
@@ -150,16 +152,18 @@
               <p class="form-legal">La medida indicada es una solicitud. La ubicación y el espacio definitivo dependerán de la organización y distribución del mercadillo.</p>
             </div>
 
-            <div class="form-field form-field-full">
+            <div class="form-field form-field-full choice-group">
               <p class="form-legal">¿Necesitas conexión eléctrica?</p>
-              <label class="check-line">
-                <input type="radio" name="necesita_electricidad" value="NO" checked />
-                No
-              </label>
-              <label class="check-line">
-                <input type="radio" name="necesita_electricidad" value="SI" />
-                Sí
-              </label>
+              <div class="choice-grid">
+                <label class="choice-option">
+                  <input type="radio" name="necesita_electricidad" value="NO" checked />
+                  <span>No</span>
+                </label>
+                <label class="choice-option">
+                  <input type="radio" name="necesita_electricidad" value="SI" />
+                  <span>Sí</span>
+                </label>
+              </div>
             </div>
 
             <div class="form-field form-field-full is-hidden" id="comerciantes-equipos" hidden>

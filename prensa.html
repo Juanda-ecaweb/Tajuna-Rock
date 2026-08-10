@@ -191,40 +191,44 @@
               <textarea id="prensa-cobertura" name="cobertura" rows="5" required></textarea>
             </div>
 
-            <div class="form-field form-field-full">
+            <div class="form-field form-field-full choice-group">
               <p class="form-legal">¿Deseas solicitar una entrevista con alguna de las bandas?</p>
-              <label class="check-line">
-                <input id="prensa-entrevista-no" type="radio" name="solicita_entrevista" value="NO" checked />
-                No
-              </label>
-              <label class="check-line">
-                <input id="prensa-entrevista-si" type="radio" name="solicita_entrevista" value="SI" />
-                Sí
-              </label>
+              <div class="choice-grid">
+                <label class="choice-option">
+                  <input id="prensa-entrevista-no" type="radio" name="solicita_entrevista" value="NO" checked />
+                  <span>No</span>
+                </label>
+                <label class="choice-option">
+                  <input id="prensa-entrevista-si" type="radio" name="solicita_entrevista" value="SI" />
+                  <span>Sí</span>
+                </label>
+              </div>
             </div>
 
             <div class="form-field form-field-full is-hidden" id="prensa-entrevista-detalles" hidden>
               <p class="form-legal">¿Con qué banda o bandas?</p>
-              <label class="check-line">
-                <input type="checkbox" name="entrevista_bandas" value="Ankor" />
-                Ankor
-              </label>
-              <label class="check-line">
-                <input type="checkbox" name="entrevista_bandas" value="Ktulu" />
-                Ktulu
-              </label>
-              <label class="check-line">
-                <input type="checkbox" name="entrevista_bandas" value="ZERO" />
-                ZERO
-              </label>
-              <label class="check-line">
-                <input type="checkbox" name="entrevista_bandas" value="Mozárabe" />
-                Mozárabe
-              </label>
-              <label class="check-line">
-                <input type="checkbox" name="entrevista_bandas" value="Ignis" />
-                Ignis
-              </label>
+              <div class="choice-grid choice-grid-checks">
+                <label class="choice-option">
+                  <input type="checkbox" name="entrevista_bandas" value="Ankor" />
+                  <span>Ankor</span>
+                </label>
+                <label class="choice-option">
+                  <input type="checkbox" name="entrevista_bandas" value="Ktulu" />
+                  <span>Ktulu</span>
+                </label>
+                <label class="choice-option">
+                  <input type="checkbox" name="entrevista_bandas" value="ZERO" />
+                  <span>ZERO</span>
+                </label>
+                <label class="choice-option">
+                  <input type="checkbox" name="entrevista_bandas" value="Mozárabe" />
+                  <span>Mozárabe</span>
+                </label>
+                <label class="choice-option">
+                  <input type="checkbox" name="entrevista_bandas" value="Ignis" />
+                  <span>Ignis</span>
+                </label>
+              </div>
 
               <label for="prensa-entrevista-observaciones">Observaciones sobre la entrevista</label>
               <textarea id="prensa-entrevista-observaciones" name="entrevista_observaciones" rows="3"></textarea>
