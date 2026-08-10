@@ -758,6 +758,210 @@
     `;
   }
 
+  const FORM_SUBMIT_TARGET_EMAIL = "tajunarock@gmail.com";
+
+  function setupAcreditacionForm() {
+    const form = document.getElementById("form-acreditacion-prensa");
+    if (!form) return;
+
+    const btn = document.getElementById("btn-enviar-acreditacion");
+    const feedback = document.getElementById("feedback-acreditacion");
+    const feedbackEntrevista = document.getElementById("feedback-entrevista");
+    const entrevistaDetalle = document.getElementById("prensa-entrevista-detalles");
+    const entrevistaRadios = form.querySelectorAll("input[name='solicita_entrevista']");
+    const entrevistaBandas = form.querySelectorAll("input[name='entrevista_bandas']");
+    const defaultBtnText = btn ? btn.textContent : "Enviar solicitud de acreditación";
+
+    // Campos obligatorios a validar en JS además de HTML
+    const camposObligatorios = ["medio", "nombre", "email", "telefono", "tipo_acreditacion", "cobertura"];
+
+    function mostrarError(msg) {
+      if (feedback) {
+        feedback.textContent = msg;
+        feedback.style.color = "#e05a5a";
+      }
+    }
+
+    function mostrarExito(msg) {
+      if (feedback) {
+        feedback.textContent = msg;
+        feedback.style.color = "#4caf82";
+      }
+    }
+
+    function setEnviando(enviando) {
+      if (!btn) return;
+      btn.disabled = enviando;
+      btn.textContent = enviando ? "Enviando…" : defaultBtnText;
+    }
+
+    function limpiarErrorEntrevista() {
+      if (feedbackEntrevista) {
+        feedbackEntrevista.textContent = "";
+        feedbackEntrevista.classList.add("is-hidden");
+      }
+    }
+
+    function mostrarErrorEntrevista(msg) {
+      if (feedbackEntrevista) {
+        feedbackEntrevista.textContent = msg;
+        feedbackEntrevista.style.color = "#e05a5a";
+        feedbackEntrevista.classList.remove("is-hidden");
+      }
+    }
+
+    function solicitaEntrevista() {
+      const seleccionado = form.querySelector("input[name='solicita_entrevista']:checked");
+      return seleccionado ? seleccionado.value === "SI" : false;
+    }
+
+    function actualizarBloqueEntrevista() {
+      const mostrar = solicitaEntrevista();
+      if (entrevistaDetalle) {
+        entrevistaDetalle.hidden = !mostrar;
+        entrevistaDetalle.classList.toggle("is-hidden", !mostrar);
+      }
+
+      if (!mostrar) {
+        entrevistaBandas.forEach((checkbox) => {
+          checkbox.checked = false;
+          checkbox.removeAttribute("required");
+        });
+        limpiarErrorEntrevista();
+      }
+    }
+
+    entrevistaRadios.forEach((radio) => {
+      radio.addEventListener("change", actualizarBloqueEntrevista);
+    });
+
+    entrevistaBandas.forEach((checkbox) => {
+      checkbox.addEventListener("change", limpiarErrorEntrevista);
+    });
+
+    actualizarBloqueEntrevista();
+
+    function validarEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const datos = new FormData(form);
+
+      // Honeypot: si el campo website tiene texto, ignorar silenciosamente
+      if (datos.get("website") && datos.get("website").trim() !== "") {
+        mostrarExito("Solicitud enviada correctamente.");
+        return;
+      }
+
+      // Validación JS de campos obligatorios
+      for (const campo of camposObligatorios) {
+        const valor = (datos.get(campo) || "").trim();
+        if (!valor) {
+          mostrarError("Por favor, completa todos los campos obligatorios.");
+          return;
+        }
+      }
+
+      if (!validarEmail((datos.get("email") || "").trim())) {
+        mostrarError("El correo electrónico no tiene un formato válido.");
+        return;
+      }
+
+      if (!datos.get("acepta_normas")) {
+        mostrarError("Debes aceptar las normas de acreditación para continuar.");
+        return;
+      }
+
+      if (!datos.get("acepta_privacidad")) {
+        mostrarError("Debes aceptar la política de privacidad para continuar.");
+        return;
+      }
+
+      if (solicitaEntrevista()) {
+        const bandasSeleccionadas = datos
+          .getAll("entrevista_bandas")
+          .map((banda) => String(banda || "").trim())
+          .filter(Boolean);
+
+        if (!bandasSeleccionadas.length) {
+          const msg = "Selecciona al menos una banda para solicitar la entrevista.";
+          mostrarError(msg);
+          mostrarErrorEntrevista(msg);
+          return;
+        }
+      } else {
+        limpiarErrorEntrevista();
+      }
+
+      if (!FORM_SUBMIT_TARGET_EMAIL) {
+        mostrarError("El formulario de acreditación aún no está configurado. Contacta con la organización.");
+        return;
+      }
+
+      setEnviando(true);
+      if (feedback) feedback.textContent = "";
+
+      const entrevistaActiva = solicitaEntrevista();
+      const bandasEntrevista = entrevistaActiva
+        ? datos.getAll("entrevista_bandas").map((item) => String(item || "").trim()).filter(Boolean)
+        : [];
+
+      const payload = {
+        AREA: "PRENSA",
+        medio: (datos.get("medio") || "").toString().trim(),
+        nombre: (datos.get("nombre") || "").toString().trim(),
+        email: (datos.get("email") || "").toString().trim(),
+        telefono: (datos.get("telefono") || "").toString().trim(),
+        tipo_acreditacion: (datos.get("tipo_acreditacion") || "").toString().trim(),
+        web_medio: (datos.get("web_medio") || "").toString().trim(),
+        cobertura: (datos.get("cobertura") || "").toString().trim(),
+        solicita_entrevista: entrevistaActiva ? "SI" : "NO",
+        entrevista_bandas: bandasEntrevista.join(", "),
+        entrevista_observaciones: entrevistaActiva
+          ? (datos.get("entrevista_observaciones") || "").toString().trim()
+          : "",
+        acepta_normas: datos.get("acepta_normas") ? "SI" : "NO",
+        acepta_privacidad: datos.get("acepta_privacidad") ? "SI" : "NO"
+      };
+
+      const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(FORM_SUBMIT_TARGET_EMAIL)}`;
+      const body = {
+        _subject: "Solicitud de prensa/acreditacion - Tajuña Rock",
+        _captcha: "false",
+        _template: "table",
+        ...payload
+      };
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("No se pudo enviar");
+          }
+          mostrarExito("Solicitud enviada correctamente. Recibirás un correo de confirmación en breve.");
+          form.reset();
+          actualizarBloqueEntrevista();
+          limpiarErrorEntrevista();
+        })
+        .catch(() => {
+          mostrarError("No se ha podido enviar la solicitud. Inténtalo de nuevo o contacta con la organización.");
+        })
+        .finally(() => {
+          setEnviando(false);
+        });
+    });
+  }
+
   function setupMailtoForms() {
     const forms = document.querySelectorAll("[data-mailto-form]");
     if (!forms.length) {
@@ -779,6 +983,142 @@
       const subjectInput = form.querySelector("[data-form-subject]");
       const submitButton = form.querySelector("button[type='submit']");
       const defaultButtonText = submitButton ? submitButton.textContent : "Enviar";
+
+      const comerciantesConfig = formType === "comerciantes"
+        ? {
+            espacioRadios: form.querySelectorAll("input[name='espacio_solicitado']"),
+            bloqueMedidaMenor: form.querySelector("#comerciantes-medida-menor"),
+            inputMedidaMenor: form.querySelector("input[name='medida_menor']"),
+            bloqueOtraMedida: form.querySelector("#comerciantes-otra-medida"),
+            inputAncho: form.querySelector("input[name='ancho_solicitado']"),
+            inputFondo: form.querySelector("input[name='fondo_solicitado']"),
+            electricidadRadios: form.querySelectorAll("input[name='necesita_electricidad']"),
+            bloqueEquipos: form.querySelector("#comerciantes-equipos"),
+            inputEquipos: form.querySelector("textarea[name='equipos_electricos']")
+          }
+        : null;
+
+      function getCheckedValue(name) {
+        const checked = form.querySelector(`input[name='${name}']:checked`);
+        return checked ? checked.value : "";
+      }
+
+      function setVisible(el, visible) {
+        if (!el) return;
+        el.hidden = !visible;
+        el.classList.toggle("is-hidden", !visible);
+      }
+
+      function limpiarYQuitarRequired(input) {
+        if (!input) return;
+        input.value = "";
+        input.removeAttribute("required");
+      }
+
+      function actualizarBloquesComerciantes() {
+        if (!comerciantesConfig) return;
+
+        const espacio = getCheckedValue("espacio_solicitado");
+        const necesitaElectricidad = getCheckedValue("necesita_electricidad");
+
+        const mostrarMedidaMenor = espacio === "MENOR";
+        const mostrarOtraMedida = espacio === "OTRA_MEDIDA";
+        setVisible(comerciantesConfig.bloqueMedidaMenor, mostrarMedidaMenor);
+        setVisible(comerciantesConfig.bloqueOtraMedida, mostrarOtraMedida);
+
+        if (comerciantesConfig.inputMedidaMenor) {
+          if (mostrarMedidaMenor) {
+            comerciantesConfig.inputMedidaMenor.removeAttribute("required");
+          } else {
+            limpiarYQuitarRequired(comerciantesConfig.inputMedidaMenor);
+          }
+        }
+
+        if (comerciantesConfig.inputAncho && comerciantesConfig.inputFondo) {
+          if (mostrarOtraMedida) {
+            comerciantesConfig.inputAncho.setAttribute("required", "required");
+            comerciantesConfig.inputFondo.setAttribute("required", "required");
+          } else {
+            limpiarYQuitarRequired(comerciantesConfig.inputAncho);
+            limpiarYQuitarRequired(comerciantesConfig.inputFondo);
+          }
+        }
+
+        const mostrarEquipos = necesitaElectricidad === "SI";
+        setVisible(comerciantesConfig.bloqueEquipos, mostrarEquipos);
+        if (comerciantesConfig.inputEquipos) {
+          if (mostrarEquipos) {
+            comerciantesConfig.inputEquipos.setAttribute("required", "required");
+          } else {
+            limpiarYQuitarRequired(comerciantesConfig.inputEquipos);
+          }
+        }
+      }
+
+      function validarComerciantes(formData) {
+        if (!comerciantesConfig) {
+          return null;
+        }
+
+        const requeridos = [
+          "nombre_puesto",
+          "tipo_producto",
+          "contacto",
+          "telefono",
+          "email",
+          "descripcion",
+          "espacio_solicitado"
+        ];
+
+        for (const campo of requeridos) {
+          const valor = (formData.get(campo) || "").toString().trim();
+          if (!valor) {
+            return "Por favor, completa todos los campos obligatorios.";
+          }
+        }
+
+        const email = (formData.get("email") || "").toString().trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          return "El correo electrónico no tiene un formato válido.";
+        }
+
+        if (!formData.get("acepta_condiciones")) {
+          return "Debes aceptar las condiciones de participación para continuar.";
+        }
+
+        if (!formData.get("acepta_privacidad")) {
+          return "Debes aceptar la política de privacidad para continuar.";
+        }
+
+        const espacio = (formData.get("espacio_solicitado") || "").toString().trim();
+        if (espacio === "OTRA_MEDIDA") {
+          const ancho = (formData.get("ancho_solicitado") || "").toString().trim();
+          const fondo = (formData.get("fondo_solicitado") || "").toString().trim();
+          if (!ancho || !fondo) {
+            return "Indica ancho y fondo cuando seleccionas otra medida.";
+          }
+        }
+
+        const necesitaElectricidad = (formData.get("necesita_electricidad") || "").toString().trim();
+        if (necesitaElectricidad === "SI") {
+          const equipos = (formData.get("equipos_electricos") || "").toString().trim();
+          if (!equipos) {
+            return "Indica qué equipos necesitas conectar si solicitas electricidad.";
+          }
+        }
+
+        return null;
+      }
+
+      if (comerciantesConfig) {
+        comerciantesConfig.espacioRadios.forEach((radio) => {
+          radio.addEventListener("change", actualizarBloquesComerciantes);
+        });
+        comerciantesConfig.electricidadRadios.forEach((radio) => {
+          radio.addEventListener("change", actualizarBloquesComerciantes);
+        });
+        actualizarBloquesComerciantes();
+      }
 
       if (subjectInput) {
         subjectInput.value = subjectByType[formType] || subjectByType.contacto;
@@ -803,6 +1143,20 @@
         event.preventDefault();
         event.stopPropagation();
 
+        if (comerciantesConfig) {
+          actualizarBloquesComerciantes();
+        }
+
+        const formData = new FormData(form);
+        const error = validarComerciantes(formData);
+        if (error) {
+          if (feedback) {
+            feedback.textContent = error;
+            feedback.style.color = "#e05a5a";
+          }
+          return;
+        }
+
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.textContent = "Enviando...";
@@ -810,9 +1164,35 @@
 
         if (feedback) {
           feedback.textContent = "Enviando el formulario desde la web...";
+          feedback.style.color = "";
         }
 
-        const payload = Object.fromEntries(new FormData(form).entries());
+        const payload = Object.fromEntries(formData.entries());
+
+        if (comerciantesConfig) {
+          payload.espacio_solicitado = getCheckedValue("espacio_solicitado") || "2X2";
+          payload.necesita_electricidad = getCheckedValue("necesita_electricidad") || "NO";
+          payload.acepta_condiciones = formData.get("acepta_condiciones") ? "SI" : "NO";
+          payload.acepta_privacidad = formData.get("acepta_privacidad") ? "SI" : "NO";
+
+          if (payload.espacio_solicitado !== "MENOR") {
+            payload.medida_menor = "";
+          }
+          if (payload.espacio_solicitado !== "OTRA_MEDIDA") {
+            payload.ancho_solicitado = "";
+            payload.fondo_solicitado = "";
+          }
+          if (payload.necesita_electricidad !== "SI") {
+            payload.equipos_electricos = "";
+          }
+          if (!payload.otras_necesidades) {
+            payload.otras_necesidades = "";
+          }
+          if (!payload.web_red) {
+            payload.web_red = "";
+          }
+        }
+
         const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`;
         const body = {
           _subject: subjectInput ? subjectInput.value : subjectByType[formType] || subjectByType.contacto,
@@ -835,15 +1215,20 @@
             }
             if (feedback) {
               feedback.textContent = "Formulario enviado correctamente. Gracias por contactar.";
+              feedback.style.color = "#4caf82";
             }
             form.reset();
             if (subjectInput) {
               subjectInput.value = subjectByType[formType] || subjectByType.contacto;
             }
+            if (comerciantesConfig) {
+              actualizarBloquesComerciantes();
+            }
           })
           .catch(() => {
             if (feedback) {
               feedback.textContent = "No se ha podido enviar el formulario. Prueba de nuevo en unos instantes o contacta por correo electrónico.";
+              feedback.style.color = "#e05a5a";
             }
           })
           .finally(() => {
@@ -953,5 +1338,6 @@
   renderIdentityMedia();
   renderStructuredData();
   renderPatrocinadores();
+  setupAcreditacionForm();
 })();
 

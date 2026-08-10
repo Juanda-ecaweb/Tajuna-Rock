@@ -455,6 +455,14 @@ img {
   margin: 0.55rem 0 0;
 }
 
+.form-legal {
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+  border-left: 3px solid var(--color-border);
+  padding-left: 0.75rem;
+  margin: 0.8rem 0;
+}
+
 .faq {
   display: flex;
   flex-direction: column;

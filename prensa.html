@@ -146,52 +146,109 @@
             <li>El incumplimiento de las normas podrá provocar la retirada de la acreditación.</li>
           </ul>
         </div>
-        <form class="site-form section-tight" data-mailto-form data-form-type="prensa">
-          <input type="hidden" name="Canal" value="Prensa y acreditaciones" />
-          <input type="hidden" name="Asunto" value="" data-form-subject />
+        <form class="site-form section-tight" id="form-acreditacion-prensa" data-acreditacion-form novalidate>
+          <!-- Honeypot antispam: oculto visualmente, no usar type="hidden" -->
+          <div style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+            <label for="prensa-website">No rellenar</label>
+            <input id="prensa-website" type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div class="form-grid">
             <div class="form-field">
-              <label for="prensa-medio">Medio o proyecto</label>
-              <input id="prensa-medio" name="Medio" type="text" required />
+              <label for="prensa-medio">Nombre del medio <span aria-hidden="true">*</span></label>
+              <input id="prensa-medio" name="medio" type="text" required autocomplete="organization" />
             </div>
             <div class="form-field">
-              <label for="prensa-nombre">Nombre de contacto</label>
-              <input id="prensa-nombre" name="Nombre" type="text" required autocomplete="name" />
+              <label for="prensa-nombre">Nombre y apellidos de la persona a acreditar <span aria-hidden="true">*</span></label>
+              <input id="prensa-nombre" name="nombre" type="text" required autocomplete="name" />
             </div>
             <div class="form-field">
-              <label for="prensa-email">Correo electronico</label>
-              <input id="prensa-email" name="Email" type="email" required autocomplete="email" />
+              <label for="prensa-email">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input id="prensa-email" name="email" type="email" required autocomplete="email" />
             </div>
             <div class="form-field">
-              <label for="prensa-tipo">Tipo de acreditacion</label>
-              <select id="prensa-tipo" name="Tipo acreditacion" required>
-                <option value="">Selecciona una opcion</option>
-                <option>Prensa</option>
-                <option>Fotografia</option>
-                <option>Video / reportero</option>
+              <label for="prensa-telefono">Teléfono <span aria-hidden="true">*</span></label>
+              <input id="prensa-telefono" name="telefono" type="tel" required autocomplete="tel" />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="prensa-tipo">Tipo de acreditación solicitada <span aria-hidden="true">*</span></label>
+              <select id="prensa-tipo" name="tipo_acreditacion" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Redactor/a">Redactor/a</option>
+                <option value="Fotógrafo/a">Fotógrafo/a</option>
+                <option value="Cámara de vídeo">Cámara de vídeo</option>
+                <option value="Radio">Radio</option>
+                <option value="Creador/a de contenido">Creador/a de contenido</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
             <div class="form-field form-field-full">
-              <label for="prensa-web">Web o red del medio</label>
-              <input id="prensa-web" name="Web del medio" type="url" placeholder="https://" />
+              <label for="prensa-web-medio">Página web o perfil del medio</label>
+              <input id="prensa-web-medio" name="web_medio" type="url" placeholder="https://" />
             </div>
             <div class="form-field form-field-full">
-              <label for="prensa-cobertura">Cobertura prevista</label>
-              <textarea id="prensa-cobertura" name="Cobertura" rows="5" required></textarea>
+              <label for="prensa-cobertura">Cobertura prevista <span aria-hidden="true">*</span></label>
+              <textarea id="prensa-cobertura" name="cobertura" rows="5" required></textarea>
+            </div>
+
+            <div class="form-field form-field-full">
+              <p class="form-legal">¿Deseas solicitar una entrevista con alguna de las bandas?</p>
+              <label class="check-line">
+                <input id="prensa-entrevista-no" type="radio" name="solicita_entrevista" value="NO" checked />
+                No
+              </label>
+              <label class="check-line">
+                <input id="prensa-entrevista-si" type="radio" name="solicita_entrevista" value="SI" />
+                Sí
+              </label>
+            </div>
+
+            <div class="form-field form-field-full is-hidden" id="prensa-entrevista-detalles" hidden>
+              <p class="form-legal">¿Con qué banda o bandas?</p>
+              <label class="check-line">
+                <input type="checkbox" name="entrevista_bandas" value="Ankor" />
+                Ankor
+              </label>
+              <label class="check-line">
+                <input type="checkbox" name="entrevista_bandas" value="Ktulu" />
+                Ktulu
+              </label>
+              <label class="check-line">
+                <input type="checkbox" name="entrevista_bandas" value="ZERO" />
+                ZERO
+              </label>
+              <label class="check-line">
+                <input type="checkbox" name="entrevista_bandas" value="Mozárabe" />
+                Mozárabe
+              </label>
+              <label class="check-line">
+                <input type="checkbox" name="entrevista_bandas" value="Ignis" />
+                Ignis
+              </label>
+
+              <label for="prensa-entrevista-observaciones">Observaciones sobre la entrevista</label>
+              <textarea id="prensa-entrevista-observaciones" name="entrevista_observaciones" rows="3"></textarea>
+
+              <p class="form-legal">La solicitud de entrevista no implica su confirmación. La organización trasladará la petición a la banda correspondiente y su realización quedará sujeta a la disponibilidad y aprobación de la banda.</p>
+              <p class="form-feedback is-hidden" id="feedback-entrevista" aria-live="polite"></p>
             </div>
           </div>
+
           <label class="check-line">
-            <input type="checkbox" name="Acepto normas acreditacion" required />
-            He leído y acepto las <a href="documentos/prensa/normas_acreditacion_acceso_prensa.pdf" target="_blank" rel="noopener">normas de acreditación y acceso para prensa</a>.
+            <input type="checkbox" name="acepta_normas" required />
+            He leído y acepto las <a href="documentos/prensa/normas_acreditacion_acceso_prensa.pdf" target="_blank" rel="noopener">normas de acceso y funcionamiento para prensa del XVIII Tajuña Rock 2026</a>.
           </label>
           <label class="check-line">
-            <input type="checkbox" name="Acepto privacidad" required />
-            Confirmo que los datos son correctos y acepto la <a href="privacidad.html">política de privacidad</a>.
+            <input type="checkbox" name="acepta_privacidad" required />
+            Acepto que mis datos sean utilizados para gestionar esta solicitud de acreditación y las comunicaciones relacionadas con el festival.
           </label>
+
+          <p class="form-legal">El envío de la solicitud no implica la concesión automática de la acreditación. La organización revisará la información y comunicará la resolución por correo electrónico.</p>
+
           <div class="form-actions">
-            <button class="btn" type="submit">Enviar solicitud de prensa</button>
+            <button class="btn" type="submit" id="btn-enviar-acreditacion">Enviar solicitud de acreditación</button>
           </div>
-          <p class="form-feedback" data-form-feedback aria-live="polite"></p>
+          <p class="form-feedback" id="feedback-acreditacion" aria-live="polite"></p>
         </form>
       </section>
 

@@ -84,45 +84,101 @@
 
       <section class="section" aria-labelledby="solicitud-comerciantes">
         <h2 id="solicitud-comerciantes">Solicitud de participacion</h2>
-        <form class="site-form" data-mailto-form data-form-type="comerciantes">
+        <form class="site-form" id="form-comerciantes" data-mailto-form data-form-type="comerciantes">
           <input type="hidden" name="Canal" value="Comerciantes y puestos" />
           <input type="hidden" name="Asunto" value="" data-form-subject />
           <div class="form-grid">
             <div class="form-field">
               <label for="comerciantes-puesto">Nombre del puesto o comercio</label>
-              <input id="comerciantes-puesto" name="Puesto o comercio" type="text" required />
+              <input id="comerciantes-puesto" name="nombre_puesto" type="text" required />
             </div>
             <div class="form-field">
               <label for="comerciantes-producto">Tipo de producto o actividad</label>
-              <input id="comerciantes-producto" name="Producto o actividad" type="text" required />
+              <input id="comerciantes-producto" name="tipo_producto" type="text" required />
             </div>
             <div class="form-field">
               <label for="comerciantes-contacto">Persona de contacto</label>
-              <input id="comerciantes-contacto" name="Contacto" type="text" required autocomplete="name" />
+              <input id="comerciantes-contacto" name="contacto" type="text" required autocomplete="name" />
             </div>
             <div class="form-field">
               <label for="comerciantes-telefono">Telefono</label>
-              <input id="comerciantes-telefono" name="Telefono" type="tel" required />
+              <input id="comerciantes-telefono" name="telefono" type="tel" required />
             </div>
             <div class="form-field">
               <label for="comerciantes-email">Correo electronico</label>
-              <input id="comerciantes-email" name="Email" type="email" required autocomplete="email" />
+              <input id="comerciantes-email" name="email" type="email" required autocomplete="email" />
             </div>
             <div class="form-field">
-              <label for="comerciantes-necesidades">Necesidades especiales</label>
-              <input id="comerciantes-necesidades" name="Necesidades especiales" type="text" />
+              <label for="comerciantes-web-red">Web / Instagram / red social</label>
+              <input id="comerciantes-web-red" name="web_red" type="text" placeholder="https:// o @perfil" />
             </div>
             <div class="form-field form-field-full">
               <label for="comerciantes-presentacion">Descripcion breve del puesto</label>
-              <textarea id="comerciantes-presentacion" name="Descripcion" rows="5" required></textarea>
+              <textarea id="comerciantes-presentacion" name="descripcion" rows="5" required></textarea>
+              <p class="form-legal">Cuéntanos brevemente qué productos o actividad ofrecerás en el puesto.</p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <p class="form-legal">Espacio aproximado que necesitas</p>
+              <label class="check-line">
+                <input type="radio" name="espacio_solicitado" value="2X2" checked />
+                2 x 2 m
+              </label>
+              <label class="check-line">
+                <input type="radio" name="espacio_solicitado" value="MENOR" />
+                Menor de 2 x 2 m
+              </label>
+              <label class="check-line">
+                <input type="radio" name="espacio_solicitado" value="OTRA_MEDIDA" />
+                Otra medida
+              </label>
+            </div>
+
+            <div class="form-field form-field-full is-hidden" id="comerciantes-medida-menor" hidden>
+              <label for="comerciantes-medida-menor-input">Medida aproximada</label>
+              <input id="comerciantes-medida-menor-input" name="medida_menor" type="text" placeholder="Ej.: 1,50 x 1 m" />
+            </div>
+
+            <div class="form-field form-field-full is-hidden" id="comerciantes-otra-medida" hidden>
+              <label for="comerciantes-ancho">Ancho necesario</label>
+              <input id="comerciantes-ancho" name="ancho_solicitado" type="text" placeholder="Ej.: 2,5 m" />
+              <label for="comerciantes-fondo">Fondo necesario</label>
+              <input id="comerciantes-fondo" name="fondo_solicitado" type="text" placeholder="Ej.: 3 m" />
+            </div>
+
+            <div class="form-field form-field-full">
+              <p class="form-legal">La medida indicada es una solicitud. La ubicación y el espacio definitivo dependerán de la organización y distribución del mercadillo.</p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <p class="form-legal">¿Necesitas conexión eléctrica?</p>
+              <label class="check-line">
+                <input type="radio" name="necesita_electricidad" value="NO" checked />
+                No
+              </label>
+              <label class="check-line">
+                <input type="radio" name="necesita_electricidad" value="SI" />
+                Sí
+              </label>
+            </div>
+
+            <div class="form-field form-field-full is-hidden" id="comerciantes-equipos" hidden>
+              <label for="comerciantes-equipos-texto">¿Qué equipos necesitas conectar?</label>
+              <textarea id="comerciantes-equipos-texto" name="equipos_electricos" rows="4"></textarea>
+              <p class="form-legal">La disponibilidad eléctrica estará condicionada a las posibilidades de la organización. El participante deberá disponer de sus propios alargadores, regletas y elementos necesarios para conectar su puesto.</p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="comerciantes-otras-necesidades">Otras necesidades u observaciones</label>
+              <textarea id="comerciantes-otras-necesidades" name="otras_necesidades" rows="4"></textarea>
             </div>
           </div>
           <label class="check-line">
-            <input type="checkbox" name="Acepto condiciones" required />
+            <input type="checkbox" name="acepta_condiciones" required />
             Confirmo que conozco y acepto las condiciones de participacion para puestos externos.
           </label>
           <label class="check-line">
-            <input type="checkbox" name="Acepto privacidad" required />
+            <input type="checkbox" name="acepta_privacidad" required />
             Acepto la <a href="privacidad.html">politica de privacidad</a> y autorizo el uso de estos datos para gestionar la solicitud.
           </label>
           <div class="form-actions">
