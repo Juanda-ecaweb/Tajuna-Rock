@@ -516,6 +516,11 @@
     formularioAcreditacion: null,
     formularioComerciantes: null
   },
+  accesoPrivado: {
+    url: "https://script.google.com/macros/s/AKfycbwte7LrxVdM7_c74vs6m-ihNmeM3zSb1YkLJ-8PpNK1HGBjVfMWVvCxAHIB3N-5D0i9/exec",
+    textoBoton: "Acceso a zona privada",
+    descripcion: "Acceso para gestión interna del festival. El sistema validará el tipo de acceso disponible para cada usuario."
+  },
   redes: {
     instagram: "https://www.instagram.com/tajunarock/?hl=es",
     facebook: "https://www.facebook.com/tajunarock/",

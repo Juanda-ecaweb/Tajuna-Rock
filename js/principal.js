@@ -720,6 +720,40 @@
     }
   }
 
+  function renderPrivateAccess() {
+    const hosts = document.querySelectorAll("[data-private-access]");
+    if (!hosts.length) {
+      return;
+    }
+
+    const acceso = data.accesoPrivado || {};
+    const accessUrl = acceso.url || "";
+    const buttonText = acceso.textoBoton || "Acceso a zona privada";
+    const baseDescription = acceso.descripcion
+      || "Acceso para gestión interna del festival. El sistema validará el perfil y mostrará las opciones permitidas.";
+
+    hosts.forEach((host) => {
+      const contexto = host.getAttribute("data-private-context") || "general";
+
+      if (!accessUrl) {
+        host.innerHTML = `
+          <div class="pending-box">
+            PENDIENTE: URL de zona privada no configurada para ${contexto}.
+          </div>
+        `;
+        return;
+      }
+
+      host.innerHTML = `
+        <p>${baseDescription}</p>
+        <div class="action-row">
+          <a class="btn" href="${accessUrl}" target="_blank" rel="noopener noreferrer">${buttonText}</a>
+        </div>
+        <p class="tag">El propio portal discrimina el tipo de acceso según el usuario autenticado.</p>
+      `;
+    });
+  }
+
   function renderAlternatePoster() {
     const press = data.prensa || {};
     const altPoster = press.cartelAlternativo || null;
@@ -1332,6 +1366,7 @@
   renderArchivePage();
   renderContactInfo();
   renderPressResources();
+  renderPrivateAccess();
   renderAlternatePoster();
   setupMailtoForms();
   renderZonaTajunaRock();
