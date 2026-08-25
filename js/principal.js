@@ -7,6 +7,7 @@
   const navItems = [
     ["index.html", "Inicio"],
     ["festival.html", "Festival"],
+    ["zona-tajuna-rock.html", "Zona Tajuña Rock"],
     ["archivo.html", "Archivo"],
     ["bandas.html", "Bandas"],
     ["publico.html", "Publico"],
@@ -1271,12 +1272,72 @@
       return;
     }
 
-    if (!data.zonaTajunaRock || !data.zonaTajunaRock.length) {
+    if (!data.zonaTajunaRock) {
+      host.innerHTML = "<div class=\"pending-box\">PENDIENTE</div>";
+      return;
+    }
+
+    if (typeof data.zonaTajunaRock === "string") {
+      host.innerHTML = data.zonaTajunaRock;
+      
+      // Inicializar modal de imágenes después de renderizar
+      setTimeout(() => {
+        initImageModal();
+      }, 0);
+      return;
+    }
+
+    if (!Array.isArray(data.zonaTajunaRock) || !data.zonaTajunaRock.length) {
       host.innerHTML = "<div class=\"pending-box\">PENDIENTE</div>";
       return;
     }
 
     host.innerHTML = `<ul>${data.zonaTajunaRock.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+  }
+
+  function initImageModal() {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalClose = document.querySelector(".modal-close");
+    const menuImages = document.querySelectorAll(".menu-card-image");
+
+    if (!modal || !modalImage || !menuImages.length) {
+      return;
+    }
+
+    // Abrir modal al hacer click en una imagen
+    menuImages.forEach((img) => {
+      img.addEventListener("click", function () {
+        modalImage.src = this.src;
+        modalImage.alt = this.alt;
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Cerrar modal al hacer click en el botón
+    if (modalClose) {
+      modalClose.addEventListener("click", function () {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    }
+
+    // Cerrar modal al hacer click fuera de la imagen
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Cerrar modal con Escape
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("active")) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
   }
 
   function setMediaImage(selector, source) {

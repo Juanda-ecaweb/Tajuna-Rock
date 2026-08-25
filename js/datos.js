@@ -431,7 +431,7 @@
           { etiqueta: "Facebook oficial", url: "https://www.facebook.com/tajunarock/" },
           { etiqueta: "Publicación mayoría de edad", url: "https://www.instagram.com/reel/DaI1yjUM1iA/" },
           { etiqueta: "Cartel oficial", url: "festival.html#cartel-oficial-title" },
-          { etiqueta: "Zona Tajuña Rock", url: "festival.html#zona-tr-title" },
+          { etiqueta: "Zona Tajuña Rock", url: "zona-tajuna-rock.html" },
           { etiqueta: "Prensa", url: "prensa.html" }
         ]
       }
@@ -580,12 +580,185 @@
         "Cinco bandas llegan desde universos diferentes y se encuentran en un mismo punto: la Plaza Mayor de Morata de Tajuña."
     }
   },
-  zonaTajunaRock: [
-    "Merchandising oficial del festival",
-    "Merchandising de las bandas",
-    "Artesanía y comercio ambulante",
-    "Barra oficial"
-  ],
+  zonaTajunaRock: `
+    <div class="zone-tajuna-stack">
+      <article class="card zone-hero-card">
+        <img class="zone-hero-image" src="imagenes/zonatajuna/lona_zona.png" alt="Lona promocional de la Zona Tajuña Rock" loading="lazy" />
+        <div>
+          <h3>Zona Tajuña Rock</h3>
+          <p>
+            Este año el Tajuña Rock se vive también en <strong>Casa Riaza</strong>, con un espacio propio
+            donde encontrarás la <strong>barra oficial</strong>, el <strong>merchandising del festival</strong>,
+            puestos de artesanía, complementos, merchan de bandas y propuestas vinculadas al rock, la música
+            y la cultura alternativa.
+          </p>
+          <p>
+            La Zona Tajuña Rock estará abierta desde las <strong>19:00</strong> hasta la hora de finalización
+            del festival, para que el ambiente del pueblo siga vivo durante toda la jornada.
+          </p>
+          <p>
+            La idea es sencilla: que el festival no se quede solo en el escenario, sino que también se viva en
+            el pueblo, con comercio, artesanía, colaboración y ambiente durante toda la jornada.
+          </p>
+        </div>
+      </article>
+
+      <article class="card bar-card">
+        <div class="bar-card-header">
+          <div>
+            <h3>Barra Oficial Tajuña Rock</h3>
+            <p>
+              La <strong>Barra Oficial de la Zona Tajuña Rock</strong> estará gestionada por
+              <strong>La Esquinita de Dani</strong>, colaborador del festival.
+            </p>
+          </div>
+          <a class="bar-instagram-link" href="https://www.instagram.com/la_esquinita_de_dani/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de La Esquinita de Dani">@la_esquinita_de_dani</a>
+        </div>
+        <a class="bar-image-link" href="https://www.instagram.com/la_esquinita_de_dani/" target="_blank" rel="noopener noreferrer" aria-label="Ir al Instagram de La Esquinita de Dani">
+          <img class="bar-image" src="imagenes/zonatajuna/barra_oficial_2026.jpeg" alt="Barra oficial de la Zona Tajuña Rock" loading="lazy" />
+        </a>
+        
+        <div class="menu-cards">
+          <div class="menu-card">
+            <img class="menu-card-image" src="imagenes/zonatajuna/carta_barra_comida_web_1200.jpg" alt="Carta de comida de La Esquinita de Dani" loading="lazy" />
+            <p><strong>Carta de comida</strong></p>
+          </div>
+          <div class="menu-card">
+            <img class="menu-card-image" src="imagenes/zonatajuna/carta_barra_bebidas_web_1200.jpg" alt="Carta de bebidas de La Esquinita de Dani" loading="lazy" />
+            <p><strong>Carta de bebidas</strong></p>
+          </div>
+        </div>
+        
+        <p>
+          Consumir en nuestra barra ayuda directamente a la continuidad del Tajuña Rock y al trabajo de la
+          asociación para que el festival pueda seguir creciendo.
+        </p>
+        <p><strong>Cada consumición en nuestra barra ayuda a que el Tajuña Rock siga adelante.</strong></p>
+        <p>En la barra se admite <strong>pago en efectivo y con tarjeta</strong>.</p>
+      </article>
+
+      <article class="card">
+        <h3>Merchandising oficial Tajuña Rock</h3>
+        <p>También tendremos disponible el <strong>merchandising oficial del Tajuña Rock</strong>.</p>
+        <p>
+          Comprar nuestro merchan no es solo llevarte un recuerdo del festival: es una forma directa de
+          colaborar con su continuidad.
+        </p>
+        <p><strong>En el merchandising oficial solo se admite pago en efectivo.</strong></p>
+        <div class="product-card-grid" aria-label="Productos del merchandising oficial">
+          <figure class="product-card">
+            <img src="imagenes/merchan/camiseta_tr_2026.png" alt="Camiseta oficial 2026 del Tajuña Rock" loading="lazy" />
+            <figcaption class="product-name">Camiseta 2026</figcaption>
+            <p class="product-meta">20 €</p>
+            <p class="product-description">Camiseta oficial de la edición 2026 del festival, pensada para llevar el símbolo del Tajuña Rock con estilo y compromiso.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/camiseta_tr.png" alt="Camiseta oficial Tajuña Rock" loading="lazy" />
+            <figcaption class="product-name">Camiseta Tajuña Rock</figcaption>
+            <p class="product-meta">15 €</p>
+            <p class="product-description">Camiseta clásica del festival con diseño identificativo del rock y la comunidad que hace posible cada edición.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/pua_2026_blanca.png" alt="Púa blanca 2026" loading="lazy" />
+            <figcaption class="product-name">Púa blanca 2026</figcaption>
+            <p class="product-meta">1,50 €</p>
+            <p class="product-description">Púa de edición especial para llevar contigo la energía del festival y la esencia del sonido que nos reúne.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/pua_2026_negra.png" alt="Púa negra 2026" loading="lazy" />
+            <figcaption class="product-name">Púa negra 2026</figcaption>
+            <p class="product-meta">1,50 €</p>
+            <p class="product-description">Detalle sencillo, útil y reconocible, ideal para completar el look del Tajuña Rock o regalarlo a otra persona.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/pedientes_TR_blacos.png" alt="Pendientes blancos del Tajuña Rock" loading="lazy" />
+            <figcaption class="product-name">Pendiente blanco</figcaption>
+            <p class="product-meta">5 €</p>
+            <p class="product-description">Pendiente artesanal con un acabado limpio y una estética que combina rock, identidad local y trabajo hecho a mano.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/pedientes_TR_negros.png" alt="Pendientes negros del Tajuña Rock" loading="lazy" />
+            <figcaption class="product-name">Pendiente negro</figcaption>
+            <p class="product-meta">5 €</p>
+            <p class="product-description">Accesorio artesanal pensado para quienes quieren llevar un recuerdo del festival con un punto más oscuro y personal.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/chapas.png" alt="Chapas del merchandising oficial" loading="lazy" />
+            <figcaption class="product-name">Chapa</figcaption>
+            <p class="product-meta">1,50 €</p>
+            <p class="product-description">Chapa original del festival para coleccionar, regalar o personalizar mochilas, bolsos y equipajes con estilo.</p>
+          </figure>
+          <figure class="product-card">
+            <img src="imagenes/merchan/totebag.png" alt="Tote bag del Tajuña Rock" loading="lazy" />
+            <figcaption class="product-name">Tote bag</figcaption>
+            <p class="product-meta">3 €</p>
+            <p class="product-description">Bolsa ligera y útil, ideal para llevar tus cosas del festival y dar visibilidad a la identidad del Tajuña Rock.</p>
+          </figure>
+        </div>
+        <p>Los pendientes y algunos productos son <strong>artesanales y hechos a mano</strong>.</p>
+      </article>
+
+      <article class="card">
+        <h3>Puestos del mercadillo</h3>
+        <p>
+          En los puestos del mercadillo el pago dependerá de cada puesto, pero como norma general
+          <strong>no habrá pago con tarjeta garantizado</strong>. Recomendamos llevar efectivo.
+        </p>
+
+        <div class="product-card-grid" aria-label="Puestos del mercadillo de la Zona Tajuña Rock">
+          <article class="product-card">
+            <img src="imagenes/zonatajuna/velanegra.jpg" alt="Productos de Vela Negra en la Zona Tajuña Rock" loading="lazy" />
+            <h4 class="product-name">Vela Negra</h4>
+            <p class="product-meta">Joyería artesanal</p>
+            <p class="product-description">Vela Negra se distingue de la moda rápida y la estética superficial. Es una marca que vive al margen: entre el arte, el ritual y el cuerpo. Piezas únicas con sello de autor, creadas 100% a mano para resistir el paso del tiempo y el paso del cuero.</p>
+            <div class="product-links">
+              <a href="https://www.instagram.com/velanegraoccultart/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <img src="imagenes/zonatajuna/toperraka.jpg" alt="Productos de Tó Perraka en la Zona Tajuña Rock" loading="lazy" />
+            <h4 class="product-name">Tó Perraka</h4>
+            <p class="product-meta">Complementos textiles</p>
+            <p class="product-description">Complementos textiles con actitud, pensados para mujeres que no piden permiso para ser ellas mismas. Un estilo que mezcla dulzura con garra, lunares con actitud y animal print con rebeldía.</p>
+            <div class="product-links">
+              <a href="https://www.toperraka.com" target="_blank" rel="noopener noreferrer">Web</a>
+              <a href="https://www.tiktok.com/@toperraka_complementos" target="_blank" rel="noopener noreferrer">TikTok</a>
+              <a href="https://www.vinted.es/member/277692964-amejorvida" target="_blank" rel="noopener noreferrer">Vinted</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <img src="imagenes/zonatajuna/brave.jpeg" alt="Puestos de Brave en la Zona Tajuña Rock" loading="lazy" />
+            <h4 class="product-name">Brave</h4>
+            <p class="product-meta">Accesorios custom</p>
+            <p class="product-description">Complementos custom en acero, cuero y todo lo relacionado con el rock y las motos. Un estilo directo, potente y muy ligado al mundo biker y la estética alternativa.</p>
+          </article>
+          <article class="product-card">
+            <img src="imagenes/zonatajuna/wara.jpg" alt="Puestos del Taller Creativo Wara en la Zona Tajuña Rock" loading="lazy" />
+            <h4 class="product-name">Taller Creativo Wara</h4>
+            <p class="product-meta">Manualidades y artesanía</p>
+            <p class="product-description">Venta de productos de manualidades y artesanía con una filosofía de crear, reutilizar y restaurar. Damos nuevas oportunidades a objetos, materiales e ideas y ponemos color a la vida.</p>
+          </article>
+        </div>
+
+      </article>
+
+      <article class="card">
+        <h3>Aviso de pagos</h3>
+        <ul class="document-list">
+          <li><strong>Barra Oficial Tajuña Rock:</strong> efectivo y tarjeta.</li>
+          <li><strong>Merchandising oficial Tajuña Rock:</strong> solo efectivo.</li>
+          <li><strong>Puestos del mercadillo:</strong> recomendamos llevar efectivo, ya que no todos los puestos dispondrán de pago con tarjeta.</li>
+        </ul>
+      </article>
+
+      <div class="modal-overlay" id="imageModal">
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Cerrar imagen">&times;</button>
+          <img id="modalImage" src="" alt="Imagen ampliada" />
+        </div>
+      </div>
+    </div>
+  `,
   media: {
     cartelOficial: {
       ruta: "imagenes/cartel/tajunarock_18_edicion.png",
