@@ -707,7 +707,9 @@
 
         <div class="product-card-grid" aria-label="Puestos del mercadillo de la Zona Tajuña Rock">
           <article class="product-card">
-            <img src="imagenes/zonatajuna/velanegra.jpg" alt="Productos de Vela Negra en la Zona Tajuña Rock" loading="lazy" />
+            <a href="https://www.instagram.com/velanegraoccultart/" target="_blank" rel="noopener noreferrer" class="product-image-link">
+              <img src="imagenes/zonatajuna/velanegra.jpg" alt="Productos de Vela Negra en la Zona Tajuña Rock" loading="lazy" />
+            </a>
             <h4 class="product-name">Vela Negra</h4>
             <p class="product-meta">Joyería artesanal</p>
             <p class="product-description">Vela Negra se distingue de la moda rápida y la estética superficial. Es una marca que vive al margen: entre el arte, el ritual y el cuerpo. Piezas únicas con sello de autor, creadas 100% a mano para resistir el paso del tiempo y el paso del cuero.</p>
@@ -716,7 +718,9 @@
             </div>
           </article>
           <article class="product-card">
-            <img src="imagenes/zonatajuna/toperraka.jpg" alt="Productos de Tó Perraka en la Zona Tajuña Rock" loading="lazy" />
+            <a href="https://www.instagram.com/toperraka_complementos/" target="_blank" rel="noopener noreferrer" class="product-image-link">
+              <img src="imagenes/zonatajuna/toperraka.jpg" alt="Productos de Tó Perraka en la Zona Tajuña Rock" loading="lazy" />
+            </a>
             <h4 class="product-name">Tó Perraka</h4>
             <p class="product-meta">Complementos textiles</p>
             <p class="product-description">Complementos textiles con actitud, pensados para mujeres que no piden permiso para ser ellas mismas. Un estilo que mezcla dulzura con garra, lunares con actitud y animal print con rebeldía.</p>
@@ -734,7 +738,9 @@
             <p class="product-description">Complementos custom en acero, cuero y todo lo relacionado con el rock y las motos. Un estilo directo, potente y muy ligado al mundo biker y la estética alternativa.</p>
           </article>
           <article class="product-card">
-            <img src="imagenes/zonatajuna/wara.jpg" alt="Puestos del Taller Creativo Wara en la Zona Tajuña Rock" loading="lazy" />
+            <a href="https://www.instagram.com/tallercreativowara/" target="_blank" rel="noopener noreferrer" class="product-image-link">
+              <img src="imagenes/zonatajuna/wara.jpg" alt="Puestos del Taller Creativo Wara en la Zona Tajuña Rock" loading="lazy" />
+            </a>
             <h4 class="product-name">Taller Creativo Wara</h4>
             <p class="product-meta">Manualidades y artesanía</p>
             <p class="product-description">Venta de productos de manualidades y artesanía con una filosofía de crear, reutilizar y restaurar. Damos nuevas oportunidades a objetos, materiales e ideas y ponemos color a la vida.</p>

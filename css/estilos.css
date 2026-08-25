@@ -647,6 +647,28 @@ img {
   background: rgba(13, 16, 24, 0.8);
 }
 
+.product-image-link {
+  display: block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image-link img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 16, 24, 0.8);
+  transition: transform 0.2s ease;
+}
+
+.product-image-link:hover img,
+.product-image-link:focus-visible img {
+  transform: scale(1.05);
+}
+
 .product-card .product-name {
   margin: 0.75rem 0 0.2rem;
   font-family: var(--font-heading);
