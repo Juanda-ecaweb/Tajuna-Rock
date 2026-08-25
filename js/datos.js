@@ -738,6 +738,12 @@
             <p class="product-meta">Manualidades y artesanía</p>
             <p class="product-description">Venta de productos de manualidades y artesanía con una filosofía de crear, reutilizar y restaurar. Damos nuevas oportunidades a objetos, materiales e ideas y ponemos color a la vida.</p>
           </article>
+          <article class="product-card">
+            <img src="imagenes/logos/tajuna-rock-logo.png" alt="Vinilos de Tajuña Rock" loading="lazy" />
+            <h4 class="product-name">Vinilos Tajuña Rock</h4>
+            <p class="product-meta">Música en vinilo</p>
+            <p class="product-description">Colección de vinilos con lo mejor del rock nacional e internacional. Descubre bandas clásicas y emergentes en el formato más auténtico. Un must para los melómanos del Tajuña Rock.</p>
+          </article>
         </div>
 
       </article>
