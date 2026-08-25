@@ -737,6 +737,9 @@
             <h4 class="product-name">Taller Creativo Wara</h4>
             <p class="product-meta">Manualidades y artesanía</p>
             <p class="product-description">Venta de productos de manualidades y artesanía con una filosofía de crear, reutilizar y restaurar. Damos nuevas oportunidades a objetos, materiales e ideas y ponemos color a la vida.</p>
+            <div class="product-links">
+              <a href="https://www.instagram.com/tallercreativowara/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
           </article>
           <article class="product-card">
             <img src="imagenes/logos/tajuna-rock-logo.png" alt="Varios musicales" loading="lazy" />
