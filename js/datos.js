@@ -721,6 +721,7 @@
             <p class="product-meta">Complementos textiles</p>
             <p class="product-description">Complementos textiles con actitud, pensados para mujeres que no piden permiso para ser ellas mismas. Un estilo que mezcla dulzura con garra, lunares con actitud y animal print con rebeldía.</p>
             <div class="product-links">
+              <a href="https://www.instagram.com/toperraka_complementos/" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://www.toperraka.com" target="_blank" rel="noopener noreferrer">Web</a>
               <a href="https://www.tiktok.com/@toperraka_complementos" target="_blank" rel="noopener noreferrer">TikTok</a>
               <a href="https://www.vinted.es/member/277692964-amejorvida" target="_blank" rel="noopener noreferrer">Vinted</a>
