@@ -750,7 +750,7 @@
           </article>
           <article class="product-card">
             <a href="https://www.facebook.com/p/Citadel-Records-100065299548041/?locale=es_ES" target="_blank" rel="noopener noreferrer" class="product-image-link">
-              <img src="imagenes/zonatajuna/citadel.jpg" alt="Puesto de Citadel Records en la Zona Tajuña Rock" loading="lazy" />
+              <img src="imagenes/zonatajuna/citadel.jpg" alt="Puesto de Citadel Records en la Zona Tajuña Rock" loading="eager" />
             </a>
             <h4 class="product-name">Citadel Records</h4>
             <p class="product-meta">Vinilos y artículos relacionados con la música</p>
