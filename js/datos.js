@@ -749,10 +749,15 @@
             </div>
           </article>
           <article class="product-card">
-            <img src="imagenes/logos/tajuna-rock-logo.png" alt="Varios musicales" loading="lazy" />
-            <h4 class="product-name">Varios musicales</h4>
-            <p class="product-meta">Artículos musicales</p>
+            <a href="https://www.facebook.com/p/Citadel-Records-100065299548041/?locale=es_ES" target="_blank" rel="noopener noreferrer" class="product-image-link">
+              <img src="imagenes/zonatajuna/citadel.jpg" alt="Puesto de Citadel Records en la Zona Tajuña Rock" loading="lazy" />
+            </a>
+            <h4 class="product-name">Citadel Records</h4>
+            <p class="product-meta">Vinilos y artículos relacionados con la música</p>
             <p class="product-description">Cuadros de música, parches, autógrafos, vinilos e imanes.</p>
+            <div class="product-links">
+              <a href="https://www.facebook.com/p/Citadel-Records-100065299548041/?locale=es_ES" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </div>
           </article>
         </div>
 
