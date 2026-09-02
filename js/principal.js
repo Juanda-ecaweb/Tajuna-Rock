@@ -10,7 +10,6 @@
     ["zona-tajuna-rock.html", "Zona Tajuña Rock"],
     ["archivo.html", "Archivo"],
     ["bandas.html", "Bandas"],
-    ["grupos.html", "¿Quieres tocar?"],
     ["publico.html", "Publico"],
     ["prensa.html", "Prensa"],
     ["comerciantes.html", "Comerciantes"],
